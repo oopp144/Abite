@@ -2,12 +2,10 @@
   <div class="header">
     <!-- <img href="http://localhost:8080/" class="logo" src="/abite/src/assets/Self-logo Blackpng.png"> -->
     <h1>{{ msg }}</h1>
-    <div class="header-right">
     <a class="active" href="#home">Home</a>
     <a href="#contact">Contact</a>
     <a href="#about">About</a>
     </div>
-  </div>  
 </template>
 
 <script>
