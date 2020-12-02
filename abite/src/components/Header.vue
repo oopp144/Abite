@@ -1,68 +1,101 @@
 <template>
   <div class="header">
-    <!-- <img href="http://localhost:8080/" class="logo" src="/abite/src/assets/Self-logo Blackpng.png"> -->
-    <h1>{{ msg }}</h1>
-    <a class="active" href="#home">Home</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
-    </div>
+    <nav class="navbar navbar-expand-lg fixed-top py-3">
+      <div class="container">
+        <h1 href="/index.html" class="navbar-brand text-uppercase font-weight-bold">
+          {{ Companyname }}
+          <img class="headerlogo" src="/src/assets/img/Self-logo Blackpng.png" alt="">
+          <!-- href="/index.html" -->
+        </h1>
+
+        <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+          class="navbar-toggler navbar-toggler-right">
+          <i class="fa fa-bars"></i>
+        </button>
+
+        <div id="navbarSupportedContent" class="collapse navbar-collapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a href="/index.html" class="nav-link text-uppercase font-weight-bold">主页<span
+                  class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-uppercase font-weight-bold">关于我们</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-uppercase font-weight-bold">案例</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-uppercase font-weight-bold">服务</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-uppercase font-weight-bold">市场</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-uppercase font-weight-bold">团购</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
 </template>
 
 <script>
-export default {
-  name: 'Header',
-  props: {
-    msg: String
+
+  export default {
+    name: "Header",
+    props: {
+      Companyname: String,
+    }
   }
-}
+
 </script>
 
-<style> 
-  .header {
-    
-    background-color: #f1f1f1;
-    padding: 20px 10px;
+<style>
+  .headerlogo {
+    width: 100%;
+    height: 100%;
+
   }
-  
-  .header a {
-    float: left;
-    color: black;
-    text-align: center;
-    padding: 12px;
+
+  /*nav bar*/
+  .navbar {
+    transition: all 0.4s;
+  }
+
+  .navbar .nav-link {
+    color: grey;
+  }
+
+  .navbar .nav-link:hover,
+  .navbar .nav-link:focus {
+    color: grey;
     text-decoration: none;
-    font-size: 18px; 
-    line-height: 25px;
-    border-radius: 4px;
   }
-  
-  .header a.logo {
-    font-size: 25px;
-    font-weight: bold;
+
+  .navbar .navbar-brand {
+    color: grey;
   }
-  
-  .header a:hover {
-    background-color: #ddd;
-    color: black;
+
+  /* Change navbar styling on scroll */
+  .navbar.active {
+    background: grey;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
   }
-  
-  .header a.active {
-    background-color: dodgerblue;
-    color: white;
+
+  .navbar.active .nav-link {
+    color: #555;
   }
-  
-  .header-right {
-    float: right;
+
+  .navbar.active .nav-link:hover,
+  .navbar.active .nav-link:focus {
+    color: #555;
+    text-decoration: none;
   }
-  
-  @media screen and (max-width: 500px) {
-    .header a {
-      float: none;
-      display: block;
-      text-align: left;
-    }
-    
-    .header-right {
-      float: none;
-    }
+
+  .navbar.active .navbar-brand {
+    color: #555;
   }
-    </style>
+</style>
